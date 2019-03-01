@@ -1,0 +1,35 @@
+.chat-side {
+	float: left;
+	width: 300px;
+	color: white;
+
+	.side-header {
+		&__box {
+			@include side-header-color;
+			height: 100px;
+			display: flex;
+			padding: 0 20px;
+			align-items: center;
+			p{
+				@include f6(16px);
+				justify-content: space-between;
+				display: flex;
+				
+
+
+			}
+			ul {
+				li {
+
+				}
+			}
+		}
+	}
+	.groups {
+		p {
+		}
+		h2 {
+		}
+	}
+
+}
