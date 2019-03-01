@@ -1,0 +1,27 @@
+@mixin f6($val) {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: $val;
+}
+
+@mixin side-header-color {
+	background-color: #253141;
+}
+
+@mixin group-color {
+	background-color: #2f3e51;
+}
+
+@mixin messages {
+	background-color: #fafafa;
+}
+
+@mixin form-color {
+	background-color: #ddd;
+}
+
+@mixin submit-btn {
+	background-color: #38aef0;
+	color: white;
+}
+
