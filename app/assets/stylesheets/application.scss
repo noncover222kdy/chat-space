@@ -3,11 +3,16 @@
  */
 
 @import "./reset";
-
+@import "./module/setting";
 
 #body {
 	display: none;
 	box-sizing: border-box;
 	background: #FFF;
-	
+
+    @import "./module/setting";
+    @import "./module/chat-side";
+    @import "./module/chat-main";
+    @import "./module/form.scss";
+
 	}
