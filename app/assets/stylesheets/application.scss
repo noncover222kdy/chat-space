@@ -3,3 +3,29 @@
  */
 
 @import "./reset";
+
+@mixin defalt($val:#FFF) {
+	background: $val;
+	box-sizing: border-box;
+}
+
+#body {
+	@include defalt();
+	display: none;
+
+	.wrapper {
+		display: flex;
+	}
+	
+	.chat-side {
+		color: white;
+		width: 300px;
+		
+		.side-header {
+
+
+		}
+	}
+
+}
+
