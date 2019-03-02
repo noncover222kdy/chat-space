@@ -19,12 +19,15 @@
 	.chat-main
 		.main-header
 			.main-header__left-box
-				%h2.main-header__left-box__current-group.main-header__left-box__current-group Text
+				%h2.main-header__left-box__current-group testgroup
+				%p.main-header__left-box__member-list Member: testuser
+		%a{href: "/groups//edit"}
 			.main-header__edit-btn Edit
 		.messages
-			.messages__upper-info
-				%p.messages__upper-info__user testtest
-				%p.messages__upper-info__date 20**/**/**/(**) **:**
+			.message
+			.message__upper-info
+				%p.message__upper-info__user testtest
+				%p.message__upper-info__date 20**/**/**/(**) **:**
 			%p.message__text textexttext
 		.form
 
