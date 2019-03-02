@@ -10,26 +10,53 @@
 			display: flex;
 			padding: 0 20px;
 			align-items: center;
-			p{
+			justify-content: space-between;
+			p {
 				@include f6(16px);
-				justify-content: space-between;
 				display: flex;
-				
-
-
 			}
 			ul {
-				li {
+				display: flex;
+				li.side-header__box__menu__edit-user{
+					margin-left: 0.3rem;
+
+					a {
+						i.fa.fa-edit {
+							display: inline-block;
+							color: white;
+						}
+					}
+				}
+				li.side-header__box__menu__new-group{
+					margin-left: 0.3rem;
+					a {
+						.fa {
+							color: white;
+						}
+					}
+					}
+				
+				}
+			}
+		}
+	.groups {
+		height: calc(100vh - 100px);
+		@include group-color;
+		padding: 20px 20px 0;
+		overflow: scroll;
+		a {
+			text-decoration: none;
+			.group {
+				margin-bottom: 40px;
+				p.group__group__name {
+					@include f6(15px);
+					margin-bottom: 5px;
+				}
+				p.group__group__message {
+					@include f6(11px);
 
 				}
 			}
 		}
 	}
-	.groups {
-		p {
-		}
-		h2 {
-		}
-	}
-
 }
