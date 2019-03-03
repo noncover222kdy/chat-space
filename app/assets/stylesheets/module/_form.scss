@@ -1,0 +1,40 @@
+.form {
+	height: 90px;
+	padding: 20px 40px;
+	@include form-color;
+
+	form.new-message {
+		display: flex;
+
+		.input-box {
+			position: relative;
+			width: 100%;
+			.input-box__text {
+				height: 50px;
+				width: 100%;
+				padding: 0 40px 0 10px;
+				color: #434a54;
+				border-style: none;
+				input {
+					
+				}
+			}
+			.input-box__image {
+				font-size: 1.3rem;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+
+				i.fa.image {
+					display: inline-block;
+				}
+				.input-box__image__file {
+			    }
+			}
+		}
+		.submit-btn{
+
+		}
+    }
+}
