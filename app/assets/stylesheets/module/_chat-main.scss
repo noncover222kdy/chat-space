@@ -40,7 +40,7 @@
 	
 	.messages {
 		height: calc(100vh - 190px);
-		padding: 46px 40px;
+		padding: 46px 40px 0;
 		@include messages;
 		overflow: scroll;
 		.message {
