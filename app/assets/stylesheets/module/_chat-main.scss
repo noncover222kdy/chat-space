@@ -46,7 +46,7 @@
     .message {
       padding-bottom: 40px;
 
-      .message__upper-info {
+      &__upper-info {
         display: flex;
         margin-bottom: 10px;
         p.message__upper-info__user {

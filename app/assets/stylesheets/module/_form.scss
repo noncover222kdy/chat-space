@@ -15,7 +15,7 @@
       left: 40px;
       top: 20px;
 
-      .input-box__text {
+      &__text {
         input {
           position: absolute;
           width: 100%;
@@ -23,7 +23,7 @@
           padding-left: 20px;
         }
       }
-      .input-box__image {
+      &__image {
         font-size: 1.3rem;
         position: absolute;
         top: 10px;
@@ -33,7 +33,7 @@
         i.fa.image {
           display: inline-block;
         }
-        .input-box__image__file {
+        &__image__file {
           }
       }
     }
