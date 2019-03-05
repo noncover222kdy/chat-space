@@ -1,54 +1,53 @@
 .form {
-	height: 90px;
-	@include form-color;
-	display: inline-block;
-	width: calc(100% - 300px);
-	position: fixed;
-	bottom: 0;
+  height: 90px;
+  @include form-color;
+  display: inline-block;
+  width: calc(100% - 300px);
+  position: fixed;
+  bottom: 0;
 
-	form.new-message {
-		position: relative;
+  form.new-message {
+    position: relative;
 
-		.input-box {
-			position: absolute;
-			width: calc(100% - 190px);
-			left: 40px;
-			top: 20px;
+    .input-box {
+      position: absolute;
+      width: calc(100% - 190px);
+      left: 40px;
+      top: 20px;
 
-			.input-box__text {
-				input {
-					position: absolute;
-    				width: 100%;
-    				height: 46px;
-    				padding-left: 20px;
-				}
-			}
-			.input-box__image {
-				font-size: 1.3rem;
-				position: absolute;
-				top: 10px;
-				right: -10px;
-				cursor: pointer;
+      .input-box__text {
+        input {
+          position: absolute;
+          width: 100%;
+          height: 46px;
+          padding-left: 20px;
+        }
+      }
+      .input-box__image {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: -10px;
+        cursor: pointer;
 
-				i.fa.image {
-					display: inline-block;
-				}
-				.input-box__image__file {
-			    }
-			}
-		}
-		.submit-btn{
-			position: absolute;
-		    width: 80px;
-		    height: 50px;
-		    text-align: center;
-		    top: 20px;
-		    right: 40px;
-		    border: 0.1px;
-		    background-color: #38AEF0;
-		    color: white;
-		    cursor: pointer;
-
-		}
+        i.fa.image {
+          display: inline-block;
+        }
+        .input-box__image__file {
+          }
+      }
     }
+    .submit-btn{
+       position: absolute;
+        width: 80px;
+        height: 50px;
+        text-align: center;
+        top: 20px;
+        right: 40px;
+        border: 0.1px;
+        background-color: #38AEF0;
+        color: white;
+        cursor: pointer;
+    }
+  }
 }
