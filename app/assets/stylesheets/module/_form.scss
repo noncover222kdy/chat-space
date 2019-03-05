@@ -2,34 +2,32 @@
 	height: 90px;
 	@include form-color;
 	display: inline-block;
-	width: 100%;
+	width: calc(100% - 300px);
 	position: fixed;
 	bottom: 0;
 
 	form.new-message {
-		display: flex;
+		position: relative;
 
 		.input-box {
-			position: relative;
-			width: 100%;
+			position: absolute;
+			width: calc(100% - 190px);
+			left: 40px;
+			top: 20px;
+
 			.input-box__text {
-				height: 50px;
-				width: 100%;
-				padding: 0 40px 0 10px;
-				color: #434a54;
-				border-style: none;
 				input {
 					position: absolute;
     				width: 100%;
-    				height: 50px;
-    				top: 16px;
+    				height: 46px;
+    				padding-left: 20px;
 				}
 			}
 			.input-box__image {
 				font-size: 1.3rem;
 				position: absolute;
 				top: 10px;
-				right: 10px;
+				right: -10px;
 				cursor: pointer;
 
 				i.fa.image {
@@ -40,6 +38,16 @@
 			}
 		}
 		.submit-btn{
+			position: absolute;
+		    width: 80px;
+		    height: 50px;
+		    text-align: center;
+		    top: 20px;
+		    right: 40px;
+		    border: 0.1px;
+		    background-color: #38AEF0;
+		    color: white;
+		    cursor: pointer;
 
 		}
     }
