@@ -5,14 +5,14 @@
         %p.side-header__box__user-name user name
         %ul.side-header__box__menu
           %li.side-header__box__menu__edit-user
-            %a{href: "/groups/new"}
+            = link_to '/groups/new', class: "edit_icon" do
               %i.fa.fa-edit.icon-color
           %li.side-header__box__menu__new-group
-            %a{href: "/users/"}
+            = link_to '/users/', class: "cong_icon" do
               %i.fa.fa-cog.icon-color
 
     .groups
-      %a{href: "groups/"}
+      = link_to "groups/" , class: "group_link" do
         .group
           %p.group__group__name text text
           %p.group__group__message text text text
@@ -21,7 +21,7 @@
       .main-header__left-box
         %h2.main-header__left-box__current-group testgroup
         %p.main-header__left-box__member-list Member: testuser
-      %a{href: "/groups//edit"}
+      = link_to "/groups//edit", class: "edit_link" do
         .main-header__edit-btn Edit
     .messages
       .message

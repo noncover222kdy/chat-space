@@ -24,8 +24,8 @@
         li.side-header__box__menu__edit-user{
           margin-left: 0.3rem;
 
-          a {
-            i.fa.fa-edit {
+          .edit_icon {
+            i.icon-color {
               display: inline-block;
               color: white;
               padding-left: 0.7rem;
@@ -34,7 +34,7 @@
         }
         li.side-header__box__menu__new-group{
         	margin-left: 0.3rem;
-          a {
+          .cong_icon {
             .fa {
               color: white;
             }
@@ -48,7 +48,7 @@
     @include group-color;
     padding: 20px 20px 0;
     overflow: scroll;
-    a {
+    .group_link {
       text-decoration: none;
       .group {
         margin-bottom: 40px;

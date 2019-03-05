@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-	root "groups#index"
-	resources :groups do
-	end
-
+  root "groups#index"
+  resources :groups do
+  end
 end
-
-
-
-
-
-
