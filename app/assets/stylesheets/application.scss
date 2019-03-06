@@ -3,8 +3,10 @@
 @import "./module/setting";
 @import "./module/chat-side";
 @import "./module/chat-main";
-@import "./module/form.scss";
-@import "./module/form.scss";
+@import "./module/form";
+@import "./module/user";
+@import "./config/colors";
+@import "./module/flash";
 
 #body {
   display: none;
