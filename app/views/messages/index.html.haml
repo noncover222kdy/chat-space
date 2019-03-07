@@ -5,10 +5,10 @@
         %p.side-header__box__user-name user name
         %ul.side-header__box__menu
           %li.side-header__box__menu__edit-user
-            = link_to '#', class: "edit_icon" do
+            = link_to new_group_path, class: "edit_icon" do
               %i.fa.fa-edit.icon-color
           %li.side-header__box__menu__new-group
-            = link_to new_user_session_path, class: "cong_icon" do
+            = link_to edit_group_path(current_user), class: "cong_icon" do
               %i.fa.fa-cog.icon-color
     .groups
       = link_to "#" , class: "group_link" do
