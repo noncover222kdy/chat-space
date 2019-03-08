@@ -61,10 +61,20 @@
           color: #999999;
 
           }
-        p.message__text {
+        .message__lower {
           color: #434a54;
           font-size: 14px;
           margin-bottom: 10px;
+
+          p.message__text {
+            color: #434a54;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+          .message__lower__image {
+
+
+          }
         }
 
 
