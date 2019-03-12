@@ -1,0 +1,21 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
+        = current_user.name
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__edit-user
+          = link_to new_group_path, class: "edit_icon" do
+            %i.fa.fa-edit.icon-color
+        %li.side-header__box__menu__new-group
+          = link_to edit_user_path(current_user), class: "cong_icon" do
+            %i.fa.fa-cog.icon-color
+  .groups
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group), class: "group_link" do
+        .group
+          %p.group__group__name
+            = group.name
+          %p.group__group__message
+            = group.show_last_message
+

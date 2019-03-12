@@ -1,9 +1,14 @@
 @import "font-awesome";
 @import "./reset";
+@import "./config/colors";
+@import "./module/flash";
+@import "./module/group";
 @import "./module/setting";
 @import "./module/chat-side";
 @import "./module/chat-main";
-@import "./module/form.scss";
+@import "./module/form";
+@import "./module/user";
+
 
 #body {
   display: none;

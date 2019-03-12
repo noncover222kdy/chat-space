@@ -6,7 +6,7 @@
   position: fixed;
   bottom: 0;
 
-  form.new-message {
+  .new-message {
     position: relative;
 
     .input-box {
@@ -16,7 +16,7 @@
       top: 20px;
 
       &__text {
-        input {
+        .content {
           position: absolute;
           width: 100%;
           height: 46px;
@@ -33,7 +33,8 @@
         i.fa.image {
           display: inline-block;
         }
-        &__image__file {
+        .hidden {
+          display: none;
           }
       }
     }

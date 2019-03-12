@@ -1,0 +1,22 @@
+.wrapper
+  = render 'shared/chat-side'
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group testgroup
+        %p.main-header__left-box__member-list Member: testuser
+      = link_to edit_group_path(@group), class: "edit_link" do
+        .main-header__edit-btn Edit
+    .messages
+      = render @messages
+    .form
+      .new-message
+        .input-box
+          = form_for [@group, @message] do |f|
+            .input-box__text
+              = f.text_field :content, class: 'content', placeholder: 'type a message'
+            = f.label :image, class: 'input-box__image' do
+              = fa_icon 'picture-o', class: 'fa-image'
+              = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'submit-btn'
+
