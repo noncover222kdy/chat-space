@@ -1,5 +1,9 @@
 $(function() {
   function buildHTML(message){
+    var image = ""
+    if (message.image !== null){
+      image = `<img src="${message.image}">`
+    }
     var html = `<div class="message__upper-info">
                   <p class="message__upper-info__user">
                     ${ message.user_name }
@@ -10,19 +14,21 @@ $(function() {
                 </div>
 
                 <div class="message__lower">
-                  ${if message.content.present?}
-                  <p class="message__text">
-                    ${message.content}
-                  </p>
-                  <div class="message__lower__image"><img src="${ message.image.url if message.image.present? }">
-                  </div>`
+                  ${ message.content }
+                    <p class="message__text">
+                      ${ message.content }
+                    </p>
+                  <div class="message__lower__image">
+                    ${image}
+                  </div>
+                </div>`
     return html;
   }
 
   $('.new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action');
+    var url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
@@ -33,13 +39,14 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html)
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
-      $('.input-box__text').val('');
-
-    });
+      $('.messages').append(html);
+      $('#message_content').val('');
+      $('.submit-btn').removeAttr('disabled');
+      // $('.submit-btm').prop("disabled", false);
+      $('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 'fast');
+    })
     .fail(function(){
       alert('error');
-    });
+    })
   });
 });
