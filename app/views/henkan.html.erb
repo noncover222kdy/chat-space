@@ -1,0 +1,29 @@
+.message__upper-info
+  %p.message__upper-info__user
+    = message.user.name
+  %p.message__upper-info__date
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+.message__lower
+  - if message.content.present?
+    %p.message__text
+      = message.content
+  = image_tag message.image.url, class: 'message__lower__image' if message.image.present?
+
+<div class="message__upper-info">
+  <p class="message__upper-info__user">
+    ${ message.user_name }
+  </p>
+  <p class="message__upper-info__date">
+    ${ message.created_at }
+  </p>
+</div>
+
+<div class="message__lower">
+  ${if message.content.present?}
+  <p class="message__text">
+    ${message.content}
+  </p>
+  <div class="message__lower__image"><img src="${ message.image.url if message.image.present? }">
+  </div>
+</div>
+
