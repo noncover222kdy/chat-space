@@ -42,7 +42,6 @@ $(function() {
       $('.messages').append(html);
       $('#message_content').val('');
       $('.submit-btn').removeAttr('disabled');
-      // $('.submit-btm').prop("disabled", false);
       $('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
