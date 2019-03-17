@@ -1,7 +1,7 @@
 $(function() {
 var search_list = $("#user-search-result");
 var search_user = $("#chat-group-form__members");
-var ids = [];
+var search_user_ids = [];
 
 function appendUser(user) {
   var html = `<div class="chat-group-user clearfix">
@@ -28,15 +28,14 @@ function appendAddUser(user_name, user_id) {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    var ids = [];
+    var search_user_ids = [];
     $('.chat-members').each(function(){
-      ids.push($(this).val());
+      search_user_ids.push($(this).val());
     });
-    console.log(ids)
     $.ajax({
       url: '/users',
       type: 'GET',
-      data: { keyword: input, ids: ids },
+      data: { keyword: input, ids: search_user_ids },
       dataType: 'json'
     })
 
