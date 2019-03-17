@@ -3,7 +3,7 @@ var search_list = $("#user-search-result");
 var search_user = $("#chat-group-form__members");
 var search_user_ids = [];
 
-function appendUser(user) {
+function appendGroupUser(user) {
   var html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${ user.name }</p>
                 <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user_id=${ user.id } data-user_name=${ user.name }>追加</a>
@@ -43,7 +43,7 @@ function appendAddUser(user_name, user_id) {
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
-          appendUser(user);
+          appendGroupUser(user);
         });
       }
       else {
