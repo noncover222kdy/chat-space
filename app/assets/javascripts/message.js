@@ -12,10 +12,9 @@ $(function() {
                   </p>
                 </div>
                 <div class="message__lower">
-                  ${ message.content }
-                    <p class="message__text">
-                      ${ message.content }
-                    </p>
+                  <p class="message__text">
+                    ${ message.content }
+                  </p>
                   <div class="message__lower__image">
                     ${image}
                   </div>
@@ -26,9 +25,9 @@ $(function() {
 function buildMESSAGE(message){
   var image = ""
   message.image !== null ? image = `<img src="${message.image}">` : image = "";
+  console.log(message)
 
   var html = `<div class="message data-message_id">
-                ${ message.id }
                 <div class="message__upper-info">
                   <p class="message__upper-info__user">
                     ${ message.user_name }
@@ -40,21 +39,22 @@ function buildMESSAGE(message){
                 <div class="message__lower">
                   ${ message.content }
                     <p class="message__text">
-                      ${ message.content }
                     </p>
                   <div class="message__lower__image">
                     ${ image }
                   </div>
                 </div>
               </div>`
+  return html;
   $(".messages").append(html);
 }
 
   $(function(){
     setInterval(update, 5000);
+    // $('.submit-btn').prop('disabled', false);
   });
-  function update(){
 
+  function update(){
     if($('.messages')[0]){
       var message_id = $('.message:last').data('message_id');
     } else {
@@ -69,11 +69,23 @@ function buildMESSAGE(message){
       },
       dataType: 'json'
     })
-    .always(function(data){
-      console.log(data)
+
+    .done(function(data){
       $.each(data, function(i, data){
-        buildMESSAGE(data);
+        var html = buildMESSAGE(data);
+        $('.messages').append(html);
+        $('.submit-btn').prop('disabled', false);
+        $('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 'fast');
       });
+    })
+
+    .fail(function(){
+      alert('error');
+    })
+
+    .always(function(data){
+      // console.log(data)
+      $('.submit-btn').prop('disabled', false);
     })
 
   }
