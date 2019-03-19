@@ -11,7 +11,6 @@ $(function() {
                     ${ message.created_at }
                   </p>
                 </div>
-
                 <div class="message__lower">
                   ${ message.content }
                     <p class="message__text">
@@ -24,26 +23,60 @@ $(function() {
     return html;
   }
 
+function buildMESSAGE(message){
+  var image = ""
+  message.image !== null ? image = `<img src="${message.image}">` : image = "";
+
+  var html = `<div class="message data-message_id">
+                ${ message.id }
+                <div class="message__upper-info">
+                  <p class="message__upper-info__user">
+                    ${ message.user_name }
+                  </p>
+                  <p class="message__upper-info__date">
+                    ${ message.created_at }
+                  </p>
+                </div>
+                <div class="message__lower">
+                  ${ message.content }
+                    <p class="message__text">
+                      ${ message.content }
+                    </p>
+                  <div class="message__lower__image">
+                    ${ image }
+                  </div>
+                </div>
+              </div>`
+  $(".messages").append(html);
+}
 
   $(function(){
     setInterval(update, 5000);
   });
   function update(){
-    var message_id = $('.message:last').data('message_id');
-    console.log(message_id)
+
+    if($('.messages')[0]){
+      var message_id = $('.message:last').data('message_id');
+    } else {
+      var message_id = 0;
+    }
+
     $.ajax({
       url: location.href,
       type: 'GET',
       data: {
-        message: { id: message_id }
+        id: message_id
       },
       dataType: 'json'
     })
     .always(function(data){
-
+      console.log(data)
+      $.each(data, function(i, data){
+        buildMESSAGE(data);
+      });
     })
-  }
 
+  }
 
   $('.new_message').on('submit', function(e){
     e.preventDefault();
