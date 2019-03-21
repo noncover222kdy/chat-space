@@ -1,5 +1,5 @@
 $(function() {
-  function buildMESSAGE(message){
+  function buildHTML(message){
     var image = ""
     message.image !== null ? image = `<img src="${message.image}">` : image = "";
     var html = `<div class="message" data-message_id= "${ message.id }">
@@ -28,9 +28,9 @@ $(function() {
   }
 
   var updateTime = 3000;
-  setInterval(autoUpdate, updateTime);
+  setInterval(msg_autoUpdate, updateTime);
 
-  function autoUpdate() {
+  function msg_autoUpdate() {
     var message_id = $('.message').last().data('message_id') || 0;
     var user_url = document.location.pathname;
     if (user_url.match(/messages/)){
@@ -43,14 +43,14 @@ $(function() {
         dataType: 'json'
       })
 
-      .done(function(data){
-        var insertMESSAGE = '';
-        data.forEach(function(message) {
+      .done(function(messages){
+        var insertMessage = '';
+        messages.forEach(function(message) {
           if (message.id > message_id) {
-          insertMESSAGE += buildMESSAGE(message);
+          insertMessage += buildHTML(message);
           }
         });
-        $('.messages').append(insertMESSAGE);
+        $('.messages').append(insertMessage);
         scroll_view()
       })
 
@@ -76,8 +76,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildMESSAGE(data);
+    .done(function(msg_data){
+      var html = buildHTML(msg_data);
       $('.messages').append(html);
       $('form')[0].reset();
       $('.submit-btn').prop('disabled', false);
