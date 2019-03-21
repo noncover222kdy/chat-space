@@ -44,7 +44,6 @@ $(function() {
       })
 
       .done(function(data){
-        console.log(data);
         var insertMESSAGE = '';
         data.forEach(function(message) {
           if (message.id > message_id) {
