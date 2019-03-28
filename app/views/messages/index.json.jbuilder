@@ -1,3 +1,4 @@
+
 if @new_message.present?
   json.array! @new_message do |message|
     json.id message.id
